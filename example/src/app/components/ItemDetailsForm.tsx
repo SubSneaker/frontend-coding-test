@@ -89,42 +89,42 @@ export function ItemDetailsForm({ action, initialValues = { title: '', descripti
   return (
     <form 
       onSubmit={onSubmit}
-      className="space-y-6 font-light"
+      className="space-y-6 font-light w-173"
     >
       <div>
-        <label htmlFor="title" className="block text-gray-600 mb-2">Name</label>
+        <label htmlFor="title" className="block text-gray-600 mb-1">Name</label>
         <input
           id="title"
           name="title"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className={`w-full p-2 border ${errors.title ? 'border-red-500' : 'border-gray-300'} rounded-md bg-secondary`}
+          className={`w-full p-2 border ${errors.title ? 'border-red-500' : 'border-gray-300'} rounded-sm bg-secondary`}
         />
         {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
       </div>
 
       <div>
-        <label htmlFor="description" className="block text-gray-600 mb-2">Description</label>
+        <label htmlFor="description" className="block text-gray-600 mb-1">Description</label>
         <textarea
           id="description"
           name="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="w-full p-2 border border-gray-300 rounded-md h-24 bg-secondary"
+          className="w-full p-2 border border-gray-300 rounded-sm h-24 bg-secondary"
         />
         {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description}</p>}
       </div>
 
       <div>
-        <label htmlFor="status" className="block text-gray-600 mb-2">Status</label>
-        <div className="relative">
+        <label htmlFor="status" className="block text-gray-600 mb-1">Status</label>
+        <div className="relative w-62">
           <select
             id="status"
             name="status"
             value={status}
             onChange={(e) => setStatus(e.target.value as TableStatus)}
-            className="w-full p-2 pr-10 border border-gray-300 rounded-md appearance-none bg-white text-black"
+            className="w-full p-2 pr-10 border border-gray-300 rounded-sm appearance-none bg-white text-black"
           >
             <option value={TableStatus.COMPLETED}>Done</option>
             <option value={TableStatus.IN_PROGRESS}>In Progress</option>

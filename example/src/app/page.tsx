@@ -1,19 +1,15 @@
 import { TableList } from "./components/TableList";
 import { Button } from "./components/Button";
-import { Table } from "@/types/tables";
 import Link from "next/link";
-
-async function getTables(): Promise<Table[]> {
-  const response = await fetch("http://example.com/api/tables");
-  return response.json();
-}
+import { getTables } from "@/services/tableService";
 
 export default async function Home() {
   const tables = await getTables();
 
   return (
     <div>
-      <nav className="bg-white flex items-center justify-between py-5 px-12 rounded-lg">
+      <nav className="bg-white flex items-center justify-between py-5 px-12 rounded-lg
+            border-b border-accent-lightest">
         <h1 className="text-2xl font-bold">Lazuli Coding Test</h1>
         <Link href="/details/new">
           <Button text="Create New" />

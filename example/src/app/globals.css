@@ -12,9 +12,11 @@
   --primary-bg: #F2F4FC;
   --primary-text: #525F90;
   --secondary-bg: rgba(251, 253, 255, 1);
+  
   /* Accent Colors */
   --accent: #022FA7;
   --accent-light: #023FA7;
+  --accent-lightest: #D2D7E8;
   /* Font size */
   --text-sm: 13px;
   --text-base: 14px;
@@ -44,6 +46,12 @@
   }
   .bg-accent-light {
     background-color: var(--accent-light);
+  }
+  .bg-accent-lightest {
+    background-color: var(--accent-lightest);
+  }
+  .border-accent-lightest {
+    border-color: var(--accent-lightest);
   }
 }
 

@@ -6,6 +6,8 @@ In this page I will include any possible questions, considerations and informati
 - As I am developing this on Windows, I can't use Hiragino Kaku Gothic ProN, which is the font used in the figma. I am using a font-stack and it's likely falling back to Noto Sans JP.
 - At first I was thinking to use styled-jsx library to implement css modules in  the same file as the React code. This is how Vue style SFCs work which I prefer and find more intuitive, however given it is not a common style for most React devs and to avoid confusion (Without specific plugins there isn't syntax highlighting), I decided to stick to TailwindCSS with Atomic CSS writing style for quick prototyping.
 - The page view components are made to use server actions to optimize calls to the API and initialize the page with the data. subsequent calls use server actions to update the data.
+- For lack of time, I decided not to implement testing frameworks at this time.
+- the code launches successfully in devmode and builds without errors., but if served as a build no data is available. I assume this is due to using the `msw` mock server and therefore am not addressing this.
 
 ## Possible Questions:
 
@@ -28,7 +30,7 @@ Regarding the use of AI, in the spirit of goodwill and disclosure I will explain
 - At the start of the project, I used it to quickly prototype different approaches (eg. using a table view VS a UL/LI with grid.).
 
 ## App usage:
-- the app is run using the standard `npm run dev` command or built with `npm run build`
-- the app hass two pages, `/` (main table display) and `/details` (detail view of a selected item)
+- the app is run using the standard `npm run dev` command or built with `npm run build` (no data is available in the build version)
+- the app has two pages, `/` (main table display) and `/details` (detail view of a selected item)
 - the app is not mobile optimized but can work on mobile devices of a varying size
 - the app implements basic form validation and notification system.
