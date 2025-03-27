@@ -1,5 +1,9 @@
-# Frontend Coding Test Specifications
 
+# Notes by Me (Tom Danino
+For notes on the project and usage, please refer to inside the project,
+in the [README.md](./lazuli-tomd-codetest/README.md) file.
+
+# Frontend Coding Test Specifications
 API integration will be mocked with msw.
 
 ## Preparation
