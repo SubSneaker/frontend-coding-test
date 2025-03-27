@@ -1,4 +1,7 @@
-import { Table } from "../../mocks/handlers";
+import { TableList } from "./components/TableList";
+import { Button } from "./components/Button";
+import { Table } from "@/types/tables";
+import Link from "next/link";
 
 async function getTables(): Promise<Table[]> {
   const response = await fetch("http://example.com/api/tables");
@@ -10,18 +13,15 @@ export default async function Home() {
 
   return (
     <div>
-      <h1>Tables</h1>
-      <ul>
-        {tables.map((table) => {
-          return (
-          <li key={table.id} className="flex items-center space-x-4">
-            <h2>{table.title}</h2>
-            <p>{table.status}</p>
-          </li>
-          )
-        })
-      }
-      </ul>
+      <nav className="bg-white flex items-center justify-between py-5 px-12 rounded-lg">
+        <h1 className="text-2xl font-bold">Lazuli Coding Test</h1>
+        <Link href="/details/new">
+          <Button text="Create New" />
+        </Link>
+      </nav>
+      <section className="main-content mx-12">
+        <TableList tables={tables} />
+      </section>
     </div>
   );
 }

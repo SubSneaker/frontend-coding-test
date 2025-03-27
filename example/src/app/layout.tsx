@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { NotificationProvider } from "./components/NotificationContext";
+import { Notifications } from "./components/Notifications";
 
 if (
   process.env.NEXT_RUNTIME === "nodejs" &&
@@ -22,7 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <NotificationProvider>
+          {children}
+          <Notifications />
+        </NotificationProvider>
       </body>
     </html>
   );
