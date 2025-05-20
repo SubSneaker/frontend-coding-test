@@ -10,7 +10,7 @@ export type Notification = {
   id: string;
   message: string;
   type: NotificationType;
-  icon?: string;
+  icon?: string || number;
 };
 
 
